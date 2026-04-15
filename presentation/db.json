@@ -1,0 +1,47 @@
+{
+  "players": [
+    {
+      "id": "1",
+      "name": "Lionel Messi",
+      "jerseyNumber": 10,
+      "height": 1.7,
+      "weight": 72
+    },
+    {
+      "id": "2",
+      "name": "Cristiano Ronaldo",
+      "jerseyNumber": 7,
+      "height": 1.87,
+      "weight": 83
+    },
+    {
+      "id": "3",
+      "name": "Kylian Mbappé",
+      "jerseyNumber": 7,
+      "height": 1.78,
+      "weight": 73
+    },
+    {
+      "name": "John mal",
+      "jerseyNumber": 2,
+      "height": 1.98,
+      "weight": 71,
+      "id": "TrxD2S_dYAc"
+    },
+    {
+      "name": "Gilbert wafula",
+      "jerseyNumber": 25,
+      "height": 1.86,
+      "weight": 70,
+      "id": "kDAbr5zUquA"
+    },
+    {
+      "name": "",
+      "jerseyNumber": 0,
+      "height": 0,
+      "weight": 0,
+      "id": "80AsRfl24Gk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
