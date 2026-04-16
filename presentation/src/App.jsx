@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import playerService from './services/players'
-// Main application component that manages the state of players, form inputs, filter, and messages, and handles fetching, adding, deleting, and updating players through the player service
+// Main application component that manages the state of players, form inputs, filter, and messages,
+//  and handles fetching, adding, deleting, and updating players through the player service
 const App = () => {
   const [players, setPlayers] = useState([])
   const [newName, setNewName] = useState('')
@@ -18,7 +19,7 @@ const App = () => {
     setMessage(text)
     setTimeout(() => setMessage(null), 3000)
   }
-// Function to add a new player, which creates a new player object from the form inputs, calls the create function from the player service, and updates the state with the returned player information, showing a message about the addition
+// Function to add a new player
   const addPlayer = (e) => {
     e.preventDefault()
 
@@ -28,7 +29,8 @@ const App = () => {
       height: Number(height),
       weight: Number(weight)
     }
-// Call the create function from the player service to add a new player, and update the state with the returned player information, showing a message about the addition
+// Call the create function from the player service to add a new player, and update the state with the returned player 
+// information, showing a message about the addition
     playerService.create(newPlayer).then(returnedPlayer => {
       setPlayers(players.concat(returnedPlayer))
       setNewName('')
@@ -58,7 +60,8 @@ const App = () => {
       height: Number(prompt('New height:', player.height) || player.height),
       weight: Number(prompt('New weight:', player.weight) || player.weight)
     }
-// Call the update function from the player service and update the state with the returned player information, showing a message about the update
+// Call the update function from the player service and update the state with the returned player information,
+//  showing a message about the update
     playerService.update(player.id, updatedPlayer).then(returnedPlayer => {
       setPlayers(players.map(p => p.id !== player.id ? p : returnedPlayer))
       showMessage(`Player '${returnedPlayer.name}' updated`)
@@ -68,7 +71,8 @@ const App = () => {
   const playersToShow = players.filter(player =>
     player.name.toLowerCase().includes(filter.toLowerCase())
   )
-// Render the application with a message area, search input, form for adding players, and a list of players with delete and edit buttons
+// Render the application with a message area, search input, form for adding players,
+//  and a list of players with delete and edit buttons
   return (
     <div>
       {message && (
@@ -90,7 +94,7 @@ const App = () => {
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
       />
-// Form for adding a new player with inputs for name, jersey number, height, and weight, and a submit button to add the player to the list
+
       <form onSubmit={addPlayer}>
         <input placeholder="Name" value={newName} onChange={(e) => setNewName(e.target.value)} />
         <input placeholder="Jersey Number" value={jerseyNumber} onChange={(e) => setJerseyNumber(e.target.value)} />
@@ -100,7 +104,7 @@ const App = () => {
       </form>
 
       <h2>Players</h2>
-// List of players that are filtered based on the search input, with delete and edit buttons for each player to allow for removing or updating player information
+
       <ul>
         {playersToShow.map(player => (
           <li key={player.id}>

@@ -34,13 +34,6 @@
       "height": 1.86,
       "weight": 70,
       "id": "kDAbr5zUquA"
-    },
-    {
-      "name": "",
-      "jerseyNumber": 0,
-      "height": 0,
-      "weight": 0,
-      "id": "80AsRfl24Gk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
